@@ -1,0 +1,5 @@
+default:
+  context:
+    parameters:
+        base_url: http://base_silex.test:8080/
+

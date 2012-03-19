@@ -1,0 +1,8 @@
+[2012-03-19 11:02:01] myapp.INFO: > GET / [] []
+[2012-03-19 11:02:01] myapp.INFO: < 200 [] []
+[2012-03-19 11:02:01] myapp.INFO: > GET /css/bootstrap.css [] []
+[2012-03-19 11:02:01] myapp.ERROR: No route found for "GET /css/bootstrap.css" [] []
+[2012-03-19 11:02:01] myapp.INFO: < 404 [] []
+[2012-03-19 11:02:01] myapp.INFO: > GET /css/style.css [] []
+[2012-03-19 11:02:01] myapp.ERROR: No route found for "GET /css/style.css" [] []
+[2012-03-19 11:02:01] myapp.INFO: < 404 [] []

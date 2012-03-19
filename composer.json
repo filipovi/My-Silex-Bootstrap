@@ -1,0 +1,26 @@
+{
+    "name": "Silex Base",
+    "description": "Silex Base App",
+    "require": {
+        "silex/silex":           "1.0.x-dev",
+        "twig/twig":             ">=1.6.2",
+        "monolog/monolog":       ">=1.0.0",
+        "doctrine/common":       ">=2.2.1",
+        "doctrine/dbal":         ">=2.2.1",
+
+        "symfony/twig-bridge":   "2.1.*",
+        "symfony/form":          "2.1.*",
+        "symfony/validator":     "2.1.*",
+        "symfony/translation":   "2.1.*",
+        "symfony/yaml":          "2.1.*",
+        "symfony/config":        "2.1.*",
+
+        "php":                   ">=5.3.2"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "BaseSilex": "src/"
+        }
+    }
+}
