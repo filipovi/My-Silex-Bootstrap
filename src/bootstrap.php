@@ -13,4 +13,3 @@ define('__SRC__',       __DIR__.'/../src');
 define('__RESOURCES__', __DIR__.'/../resources');
 
 require_once __VENDOR__.'/.composer/autoload.php';
-
