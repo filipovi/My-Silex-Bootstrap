@@ -18,13 +18,24 @@ Install
 ------
 
 To install it :
-'git clone'
+
+`git clone`
+
 and
-'composer install --verbose'
+
+`composer install --verbose`
 
 Tests
 -----
 
-'phpunit'
+`phpunit`
 
-'behat'
+and
+
+`behat`
+
+Warning
+-----
+
+Waiting for https://github.com/fabpot/Silex/pull/284 to be merged in Silex.
+
