@@ -34,8 +34,8 @@ and
 
 `behat`
 
-Warning
------
+Licence
+-------
 
-Waiting for https://github.com/fabpot/Silex/pull/284 to be merged in Silex.
+This code is licensed under the MIT license.
 
