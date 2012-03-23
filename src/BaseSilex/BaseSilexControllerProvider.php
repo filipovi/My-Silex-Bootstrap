@@ -11,6 +11,7 @@
 namespace BaseSilex;
 
 use BaseSilex\Entity\BaseSilex;
+use BaseSilex\Form\BaseSilexForm;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
@@ -18,6 +19,7 @@ use Silex\ControllerCollection;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 
 class BaseSilexControllerProvider implements ControllerProviderInterface
 {
@@ -27,7 +29,6 @@ class BaseSilexControllerProvider implements ControllerProviderInterface
         $controllers = new ControllerCollection();
 
         // Routing
-
         $app->match('/{index}', function (Request $request, $index) use($app) {
             $baseSilex = new BaseSilex();
 
@@ -53,7 +54,33 @@ class BaseSilexControllerProvider implements ControllerProviderInterface
         })
             ->method('GET')
             ->value('index', '999')
+            ->assert('index', '\d+')
             ;
+
+        $app->match('/action', function(Request $request) use ($app) {
+            $form = BaseSilexForm::getForm($app['form.factory']);
+
+            if ('POST' == $request->getMethod()) {
+                $form->bindRequest($request);
+
+                if ($form->isValid()) {
+                    $datas = $form->getData(); 
+
+                    $app['session']->setFlash('notice', 'notice !');
+
+                    return $app->redirect("/");
+                }
+            }
+
+            $render = $app['twig']->render('form.twig', array(
+                'form' => $form->createView()
+            ));
+
+            return new Response(
+                $render,
+                200
+            );
+        })->method('GET|POST');
 
         return $controllers;
     }

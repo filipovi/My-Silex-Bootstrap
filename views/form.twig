@@ -1,0 +1,27 @@
+{% extends layout %}
+
+{% block content %}
+<form action="/action" method="post" {{ form_enctype(form) }} novalidate="novalidate" class="form-stacked">
+    <fieldset>
+        <legend>BaseSilex Form</legend>
+        <em>
+
+            <div class="clearfix">
+                <label>{{ form_label(form.id) }}</label>
+                <div class="input">
+                    {{ form_widget(form.id, { 'attr': {'class': 'required form-input'} }) }}
+                    {% if form_errors(form.id) %}
+                        <span class="red"><b>{{ "error" | trans}}</b></span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <button class="btn success" type="submit" value="submit">{{ "submit" | trans}}</button>
+
+            {{ form_rest(form) }}
+
+        </em>
+    </fieldset>
+</form>
+
+{% endblock %}

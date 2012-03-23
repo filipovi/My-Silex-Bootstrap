@@ -30,6 +30,12 @@
          <div class="container" >
 
             <div class="content">
+                {% block flash %}
+                    {% if app.session.hasFlash('notice') %}
+                        <p> {{ app.session.flash('notice')|trans }} </p>
+                    {% endif %}
+                {% endblock flash %}
+
                 {% block content %}{% endblock %}
             </div>
         </div>
